@@ -11,7 +11,7 @@
 //#include <Servo.h>   //To Control Servo motor
 
 #define MAX_DISTANCE 200
-unsigned int MAX_SPEED = 120; // sets speed of DC  motors
+unsigned int MAX_SPEED = 180; // sets speed of DC  motors
 #define MAX_SPEED_OFFSET 20
 //#define led A4
 //#define led2 A5
@@ -71,7 +71,7 @@ void loop()
   
   if (Fd == 1 && Bd == 0 && Ld == 0 && Rd == 0 && boost == 1)
   {
-    MAX_SPEED = 250;
+    MAX_SPEED = 220;
     moveForward_Boost();
     // delay(2000);
     Serial.println("******************FORWARD________BOOST");
@@ -79,7 +79,7 @@ void loop()
   
   else if (Fd == 1 && Bd == 0 && Ld == 0 && Rd == 0 && boost == 0)
   {
-    MAX_SPEED = 120;
+    MAX_SPEED = 180;
     moveForward();
     // delay(2000);
     Serial.println("******************FORWARD");
@@ -228,10 +228,10 @@ void moveBackward()
 
 int turnRight(int z)
 {
-  motor1.setSpeed(110);
-  motor2.setSpeed(110);
-  motor3.setSpeed(110);
-  motor4.setSpeed(110);
+  motor1.setSpeed(160);
+  motor2.setSpeed(160);
+  motor3.setSpeed(160);
+  motor4.setSpeed(160);
   Serial.println("******* RIGHT TURN ********");
   motor1.run(FORWARD);
   motor2.run(FORWARD);
@@ -246,10 +246,10 @@ int turnRight(int z)
 
 int turnLeft(int z)
 {
-  motor1.setSpeed(110);
-  motor2.setSpeed(110);
-  motor3.setSpeed(110);
-  motor4.setSpeed(110);
+  motor1.setSpeed(160);
+  motor2.setSpeed(160);
+  motor3.setSpeed(160);
+  motor4.setSpeed(160);
   Serial.println("******* LEFT TURN ********");
   motor1.run(BACKWARD);
   motor2.run(BACKWARD);
