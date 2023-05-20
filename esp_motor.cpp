@@ -11,7 +11,7 @@
 //#include <Servo.h>   //To Control Servo motor
 
 #define MAX_DISTANCE 200
-unsigned int MAX_SPEED = 180; // sets speed of DC  motors
+unsigned int MAX_SPEED = 250; // sets speed of DC  motors
 #define MAX_SPEED_OFFSET 20
 //#define led A4
 //#define led2 A5
@@ -71,7 +71,7 @@ void loop()
   
   if (Fd == 1 && Bd == 0 && Ld == 0 && Rd == 0 && boost == 1)
   {
-    MAX_SPEED = 220;
+    MAX_SPEED = 250;
     moveForward_Boost();
     // delay(2000);
     Serial.println("******************FORWARD________BOOST");
@@ -79,7 +79,7 @@ void loop()
   
   else if (Fd == 1 && Bd == 0 && Ld == 0 && Rd == 0 && boost == 0)
   {
-    MAX_SPEED = 180;
+    MAX_SPEED = 250;
     moveForward();
     // delay(2000);
     Serial.println("******************FORWARD");
@@ -164,7 +164,7 @@ void moveForward_Boost()
     motor3.run(FORWARD);
     motor4.run(FORWARD);
     // maxspeed = 250
-    for (speedSet = 0; speedSet <= MAX_SPEED; speedSet += 5)
+    for (speedSet = 0; speedSet <= MAX_SPEED; speedSet += 30)
     {
       motor1.setSpeed(speedSet);
       motor2.setSpeed(speedSet);
@@ -190,7 +190,7 @@ void moveForward()
     motor2.run(FORWARD);
     motor3.run(FORWARD);
     motor4.run(FORWARD);
-    for (speedSet = 0; speedSet <= MAX_SPEED; speedSet += 5)
+    for (speedSet = 0; speedSet <= MAX_SPEED; speedSet += 30)
     {
       motor1.setSpeed(speedSet);
       motor2.setSpeed(speedSet);
@@ -214,7 +214,7 @@ void moveBackward()
     motor2.run(BACKWARD);
     motor3.run(BACKWARD);
     motor4.run(BACKWARD);
-    for (speedSet = 0; speedSet < 130; speedSet += 6)
+    for (speedSet = 0; speedSet <= 250; speedSet += 30)
     {
       motor1.setSpeed(speedSet);
       motor2.setSpeed(speedSet);
@@ -228,10 +228,10 @@ void moveBackward()
 
 int turnRight(int z)
 {
-  motor1.setSpeed(160);
-  motor2.setSpeed(160);
-  motor3.setSpeed(160);
-  motor4.setSpeed(160);
+  motor1.setSpeed(180);
+  motor2.setSpeed(180);
+  motor3.setSpeed(180);
+  motor4.setSpeed(180);
   Serial.println("******* RIGHT TURN ********");
   motor1.run(FORWARD);
   motor2.run(FORWARD);
@@ -246,10 +246,10 @@ int turnRight(int z)
 
 int turnLeft(int z)
 {
-  motor1.setSpeed(160);
-  motor2.setSpeed(160);
-  motor3.setSpeed(160);
-  motor4.setSpeed(160);
+  motor1.setSpeed(180);
+  motor2.setSpeed(180);
+  motor3.setSpeed(180);
+  motor4.setSpeed(180);
   Serial.println("******* LEFT TURN ********");
   motor1.run(BACKWARD);
   motor2.run(BACKWARD);
