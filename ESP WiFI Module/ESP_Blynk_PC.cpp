@@ -32,9 +32,9 @@ BLYNK_WRITE(V2) {
 BLYNK_WRITE(V3) {
   digitalWrite(D3, param.asInt());
 }
-BLYNK_WRITE(V4) {
-  digitalWrite(D4, param.asInt());
-}
+// BLYNK_WRITE(V4) {
+//   digitalWrite(D4, param.asInt());
+// }
 
 void setup() {
   //Set the LED pin as an output pin
@@ -42,7 +42,7 @@ void setup() {
   pinMode(D1, OUTPUT);
   pinMode(D2, OUTPUT);
   pinMode(D3, OUTPUT);
-  pinMode(D4, OUTPUT);
+  // pinMode(D4, OUTPUT);
   //Initialize the Blynk library
   Blynk.begin(auth, ssid, pass, "blynk.cloud", 80);
 }
